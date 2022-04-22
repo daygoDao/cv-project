@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 const CVform = (props) => {
   // constructor(props) {
@@ -7,9 +7,14 @@ const CVform = (props) => {
   // }
 
   return (
-    <div>
-      <h1>ayo from h1</h1>
-    </div>
+    <form>
+        <h1>CV Generator</h1>
+        {/* <label htmlFor="name">Name</label>
+        <input type="text" id="name" placeholder="Jo Bob"/>
+
+        <label htmlFor="name"></label>
+        <input type="text" id="name" placeholder="Jo Bob"/> */}
+    </form>
   );
 };
 
