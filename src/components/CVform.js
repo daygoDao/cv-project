@@ -8,12 +8,18 @@ const CVform = (props) => {
 
   return (
     <form>
-        <h1>CV Generator</h1>
-        {/* <label htmlFor="name">Name</label>
+      <h1>CV Generator</h1>
+      {/* <label htmlFor="name">Name</label>
         <input type="text" id="name" placeholder="Jo Bob"/>
 
         <label htmlFor="name"></label>
         <input type="text" id="name" placeholder="Jo Bob"/> */}
+
+      {/* 
+        Personal Info
+        Work Exp
+        Education
+         */}
     </form>
   );
 };
