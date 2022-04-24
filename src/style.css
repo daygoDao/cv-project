@@ -1,4 +1,6 @@
-.personal {
+.personal,
+.education,
+.work {
     display: flex;
     flex-direction: column;
 }
