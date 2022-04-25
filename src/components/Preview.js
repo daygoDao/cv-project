@@ -2,7 +2,7 @@ import React from 'react'
 
 const Preview = ({person}) => {
   const {firstName, lastName, personalDesc, email,phone} = person;
-  console.log(firstName)
+  
   return (
     <div className='cvPreview'>
         <section className='cvPersonalDesc'>
