@@ -15,10 +15,12 @@ const App = () => {
   });
 
   const updatePersons = (e) => {
-    console.log(e);
     setPersonState((prevState) => {
+      console.log(prevState);
+
       return {
         ...prevState,
+        //firstName: 
       };
     });
   };
@@ -31,6 +33,9 @@ const App = () => {
           <PersonalInfo onChange={updatePersons} />
           <EducationHistory />
           <WorkHistory />
+          <button type="button" onClick={updatePersons}>
+            process
+          </button>
         </form>
 
         <Preview person={personState} />
