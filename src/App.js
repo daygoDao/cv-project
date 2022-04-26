@@ -13,34 +13,71 @@ const App = () => {
     email: "ayoyo@you.com",
     phone: "1-800-whaddup",
   });
+  
 
-  const [personFirst, setPersonFirst] = useState("init");
 
   const updateFirstName = (e) => {
-    console.log("within updateFirstName");
-    setPersonFirst(e.target.value);
-  };
-
-  const updatePersons = (e) => {
-    setPersonState((prevState) => {
-      console.log(prevState);
-
+    setPersonState(prevState => {
       return {
         ...prevState,
         firstName: e.target.value,
-      };
+      }
     });
   };
+  
+  const updateLastName = (e) => {
+    setPersonState(prevState => {
+      return {
+        ...prevState,
+        lastName: e.target.value,
+      }
+    });
+  };
+  
+  const updatePersonDesc = (e) => {
+    setPersonState(prevState => {
+      return {
+        ...prevState,
+        personalDesc: e.target.value,
+      }
+    });
+  };
+  
+  const updateEmail = (e) => {
+    setPersonState(prevState => {
+      return {
+        ...prevState,
+        email: e.target.value,
+      }
+    });
+  };
+  
+  const updatePhone = (e) => {
+    setPersonState(prevState => {
+      return {
+        ...prevState,
+        phone: e.target.value,
+      }
+    });
+  };
+  
 
   return (
     <div className="App">
       <h1>CV Generator</h1>
       <main>
         <form>
-          <PersonalInfo person={personState} update={updatePersons} />
+          <PersonalInfo
+            person={personState}
+            updateFirstName={updateFirstName}
+            updateLastName={updateLastName}
+            updatePersonDesc={updatePersonDesc}
+            updateEmail={updateEmail}
+            updatePhone={updatePhone}
+          />
           <EducationHistory />
           <WorkHistory />
-          <button type="button" onClick={updatePersons}>
+          <button type="button">
             process
           </button>
         </form>

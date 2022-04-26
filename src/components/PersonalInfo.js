@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const PersonalInfo = (prop) => {
-  const { firstName, lastName, personalDesc, email, phone } =prop;
-  // console.log(prop.update);
+  const { firstName, lastName, personalDesc, email, phone } = prop;
+  console.log(prop.updateFirstName);
   return (
     <div className="personal">
       <h2>PersonalInfo</h2>
@@ -11,20 +11,40 @@ const PersonalInfo = (prop) => {
         type="text"
         placeholder={firstName}
         id="firstName"
-        onChange={prop.update}
+        onChange={prop.updateFirstName}
       />
 
       <label htmlFor="lastName">Last Name</label>
-      <input type="text" placeholder={lastName} id="lastName" />
+      <input
+        type="text"
+        placeholder={lastName}
+        id="lastName"
+        onChange={prop.updateLastName}
+      />
 
       <label htmlFor="personalDesc">Personal Description</label>
-      <input type="text" placeholder={personalDesc} id="personalDesc" />
+      <input
+        type="text"
+        placeholder={personalDesc}
+        id="personalDesc"
+        onChange={prop.updatePersonDesc}
+      />
 
       <label htmlFor="email">e-mail</label>
-      <input type="email" placeholder="sample@here.aol" id="email" />
+      <input
+        type="email"
+        placeholder="sample@here.aol"
+        id="email"
+        onChange={prop.updateEmail}
+      />
 
       <label htmlFor="phone">Personal Description</label>
-      <input type="tel" placeholder="XXX-XXX-XXXX" id="phone" />
+      <input
+        type="tel"
+        placeholder="XXX-XXX-XXXX"
+        id="phone"
+        onChange={prop.updatePhone}
+      />
     </div>
   );
 };
