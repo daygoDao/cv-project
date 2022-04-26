@@ -9,10 +9,17 @@ const App = () => {
   const [personState, setPersonState] = useState({
     firstName: "sir",
     lastName: "dude",
-    personalDesc: "jobless nerd",
+    personalDesc: "brief description",
     email: "ayoyo@you.com",
     phone: "1-800-whaddup",
   });
+
+  const [personFirst, setPersonFirst] = useState("init");
+
+  const updateFirstName = (e) => {
+    console.log("within updateFirstName");
+    setPersonFirst(e.target.value);
+  };
 
   const updatePersons = (e) => {
     setPersonState((prevState) => {
@@ -20,7 +27,7 @@ const App = () => {
 
       return {
         ...prevState,
-        //firstName: 
+        firstName: e.target.value,
       };
     });
   };
@@ -30,7 +37,7 @@ const App = () => {
       <h1>CV Generator</h1>
       <main>
         <form>
-          <PersonalInfo onChange={updatePersons} />
+          <PersonalInfo person={personState} update={updatePersons} />
           <EducationHistory />
           <WorkHistory />
           <button type="button" onClick={updatePersons}>
