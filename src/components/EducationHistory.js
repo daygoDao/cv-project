@@ -1,7 +1,7 @@
 import React from "react";
 
 const EducationHistory = (prop) => {
-  console.log(prop)
+  // console.log(prop)
     
   return (
     <div className="education">
@@ -21,7 +21,7 @@ const EducationHistory = (prop) => {
       <label htmlFor="schoolTo">To</label>
       <input type="number" name="schoolTo" id="schoolTo" placeholder="2022" />
 
-      <button>add another education</button>
+      <button onClick={prop.append} type='button'>add another education</button>
     </div>
   );
 };
