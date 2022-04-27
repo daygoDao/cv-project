@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PersonalInfo from "./components/PersonalInfo";
 import EducationHistory from "./components/EducationHistory";
 import WorkHistory from "./components/WorkHistory";
@@ -13,54 +13,67 @@ const App = () => {
     email: "ayoyo@you.com",
     phone: "1-800-whaddup",
   });
-  
-
 
   const updateFirstName = (e) => {
-    setPersonState(prevState => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         firstName: e.target.value,
-      }
+      };
     });
   };
-  
+
   const updateLastName = (e) => {
-    setPersonState(prevState => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         lastName: e.target.value,
-      }
+      };
     });
   };
-  
+
   const updatePersonDesc = (e) => {
-    setPersonState(prevState => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         personalDesc: e.target.value,
-      }
+      };
     });
   };
-  
+
   const updateEmail = (e) => {
-    setPersonState(prevState => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         email: e.target.value,
-      }
+      };
     });
   };
-  
+
   const updatePhone = (e) => {
-    setPersonState(prevState => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         phone: e.target.value,
-      }
+      };
     });
   };
+
+  // education history
+  const [education, setEducation] = useState([
+    {
+      school: "kncokcs",
+      fromYear: 1,
+      toYear: 3,
+    },
+  ]);
   
+
+  useEffect(() => {
+    setEducation((prevState) => {
+      console.log(prevState);
+    });
+  }, [education]);
 
   return (
     <div className="App">
@@ -75,11 +88,9 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          <EducationHistory />
+          <EducationHistory edu={education} />
           <WorkHistory />
-          <button type="button">
-            process
-          </button>
+          <button type="button">process</button>
         </form>
 
         <Preview person={personState} />

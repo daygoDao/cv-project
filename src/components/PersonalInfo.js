@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const PersonalInfo = (prop) => {
   const { firstName, lastName, personalDesc, email, phone } = prop;
-  console.log(prop.updateFirstName);
+  // console.log(prop.updateFirstName);
   return (
     <div className="personal">
       <h2>PersonalInfo</h2>
