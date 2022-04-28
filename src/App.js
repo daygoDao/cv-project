@@ -64,7 +64,7 @@ const App = () => {
     school: "",
     fromYear: 0,
     toYear: 0,
-  }
+  };
 
   const [education, setEducation] = useState([
     {
@@ -73,16 +73,13 @@ const App = () => {
       toYear: 3,
     },
   ]);
-  
+
   const appendEduList = () => {
     setEducation((prevState) => {
-      console.log(prevState.map(x => x))
-      return [
-        ...prevState,
-        baseEduObj
-      ]
-    })
-  }
+      // console.log(prevState.map((x) => x));
+      return [...prevState, baseEduObj];
+    });
+  };
 
   // useEffect(() => {
   //   setEducation((prevState) => {
@@ -103,9 +100,12 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          <EducationHistory edu={education} append={appendEduList} />
+          <EducationHistory edu={education} />
+          <button onClick={appendEduList} type="button">
+            add another education
+          </button>
+
           <WorkHistory />
-          <button type="button">process</button>
         </form>
 
         <Preview person={personState} />
