@@ -61,22 +61,15 @@ const App = () => {
 
   // education history
   const baseEduObj = {
-    school: "",
+    school: "test",
     fromYear: 0,
     toYear: 0,
   };
 
-  const [education, setEducation] = useState([
-    {
-      school: "kncokcs",
-      fromYear: 1,
-      toYear: 3,
-    },
-  ]);
+  const [education, setEducation] = useState([baseEduObj]);
 
   const appendEduList = () => {
     setEducation((prevState) => {
-      // console.log(prevState.map((x) => x));
       return [...prevState, baseEduObj];
     });
   };
@@ -108,7 +101,7 @@ const App = () => {
           <WorkHistory />
         </form>
 
-        <Preview person={personState} />
+        <Preview person={personState} edu={education} />
       </main>
     </div>
   );

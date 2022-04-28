@@ -1,20 +1,16 @@
 import React from "react";
 
 const EducationHistory = (prop) => {
-  console.log(prop.edu);
-  // const test1 = <div>6o9</div>;
-  // const test2 = <div>6o9</div>;
-  // console.log({ test1 });
   const content = (
     <div className="ed">
       <label htmlFor="schoolName">School name</label>
-      <input type="text" name="schoolName" class="schoolName" />
+      <input type="text" name="schoolName" className="schoolName" />
 
       <label htmlFor="schoolFrom">From</label>
       <input
         type="number"
         name="schoolFrom"
-        class="schoolFrom"
+        className="schoolFrom"
         placeholder="1984"
       />
 
@@ -22,7 +18,7 @@ const EducationHistory = (prop) => {
       <input
         type="number"
         name="schoolTo"
-        class="schoolTo"
+        className="schoolTo"
         placeholder="2022"
       />
     </div>
@@ -32,14 +28,18 @@ const EducationHistory = (prop) => {
   for (let i = 0; i < prop.edu.length; i++) {
     display.push(content);
   }
-  console.log(display)
+
+  let output = display.map((value, index) => {
+    return <li key={index}>{value}</li>
+  })
+
+  // console.log(prop.edu);
+  // console.log(display)
 
   return (
     <div className="education">
       <h2>Education History</h2>
-      {display.map((value, index) => {
-        return <li key={index}>{value}</li>
-      })}
+      {output}
     </div>
   );
 };
