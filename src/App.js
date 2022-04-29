@@ -75,21 +75,17 @@ const App = () => {
   };
 
   const updateEduName = (e) => {
-    console.log(e.target.parentNode.parentNode.title);
+    const activeLI = document.querySelectorAll('.education li')
+    let index;
+    for(let i = 0; i < activeLI.length; i++) {
+      if(activeLI[i] == e.target.parentNode.parentNode) index = i;
+    }
     setEducation((prevState) => {
       let temp = [...prevState];
-      let index = e.target.parentNode.parentNode.title
       temp[index].school = e.target.value;
-      // console.log(prevState)
       return temp;
     });
   };
-
-  // useEffect(() => {
-  //   setEducation((prevState) => {
-  //     console.log(prevState);
-  //   });
-  // }, [education]);
 
   return (
     <div className="App">

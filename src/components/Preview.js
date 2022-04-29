@@ -32,7 +32,9 @@ const Preview = (prop) => {
         <p>Phone: {phone}</p>
         <p>About me: {personalDesc}</p>
       </section>
-      <section>{output}</section>
+      <section className="cvEdu">
+      <h6>edu</h6>
+      {output}</section>
     </div>
   );
 };
