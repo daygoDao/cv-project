@@ -7,7 +7,9 @@ const Preview = (prop) => {
     // console.log(edu)
     return (
       <div>
-        <p>{edu.school}</p>
+        <span>{edu.school}</span>
+        <span>From: {edu.fromYear}</span>
+        <span>To: {edu.toYear}</span>
       </div>
     );
   };
@@ -33,8 +35,9 @@ const Preview = (prop) => {
         <p>About me: {personalDesc}</p>
       </section>
       <section className="cvEdu">
-      <h6>edu</h6>
-      {output}</section>
+        <h6>edu</h6>
+        {output}
+      </section>
     </div>
   );
 };

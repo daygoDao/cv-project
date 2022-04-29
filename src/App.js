@@ -74,15 +74,37 @@ const App = () => {
     });
   };
 
-  const updateEduName = (e) => {
-    const activeLI = document.querySelectorAll('.education li')
+  const findIndex = (e) => {
+    const activeLI = document.querySelectorAll(".education li");
     let index;
-    for(let i = 0; i < activeLI.length; i++) {
-      if(activeLI[i] == e.target.parentNode.parentNode) index = i;
+    for (let i = 0; i < activeLI.length; i++) {
+      if (activeLI[i] == e.target.parentNode.parentNode) return i;
     }
+  };
+
+  const updateEduName = (e) => {
     setEducation((prevState) => {
       let temp = [...prevState];
-      temp[index].school = e.target.value;
+      console.log(findIndex(e))
+      temp[findIndex(e)].school = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateEduFromYear = (e) => {
+    console.log('ayo')
+    setEducation((prevState) => {
+      let temp = [...prevState];
+      console.log(findIndex(e))
+      temp[findIndex(e)].fromYear = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateEduToYear = (e) => {
+    setEducation((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].toYear = e.target.value;
       return temp;
     });
   };
@@ -100,7 +122,12 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          <EducationHistory edu={education} updateEdu={updateEduName} />
+          <EducationHistory
+            edu={education}
+            updateEdu={updateEduName}
+            updateEduFromYear={updateEduFromYear}
+            updateEduToYear={updateEduToYear}
+          />
           <button onClick={appendEduList} type="button">
             add another education
           </button>
