@@ -1,7 +1,7 @@
 import React from "react";
 
 const EducationHistory = (prop) => {
-  // console.log(prop.updateEduFromYear)
+  // console.log(prop.edu)
 
   const content = (
     <div className="ed">
@@ -40,7 +40,7 @@ const EducationHistory = (prop) => {
 
   let output = display.map((value, index) => {
     return (
-      <li title={index} key={index}>
+      <li data={index} key={index}>
         {value}
       </li>
     );

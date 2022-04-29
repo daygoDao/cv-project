@@ -61,12 +61,18 @@ const App = () => {
 
   // education history
   const baseEduObj = {
-    school: "test",
+    school: "",
     fromYear: 0,
     toYear: 0,
   };
 
-  const [education, setEducation] = useState([baseEduObj]);
+  const [education, setEducation] = useState([
+    {
+      school: "",
+      fromYear: 0,
+      toYear: 0,
+    },
+  ]);
 
   const appendEduList = () => {
     setEducation((prevState) => {
@@ -76,26 +82,33 @@ const App = () => {
 
   const findIndex = (e) => {
     const activeLI = document.querySelectorAll(".education li");
-    let index;
+    let index = 0;
     for (let i = 0; i < activeLI.length; i++) {
       if (activeLI[i] == e.target.parentNode.parentNode) return i;
     }
   };
 
   const updateEduName = (e) => {
+    console.log(e.target.parentNode.parentNode.title);
+
     setEducation((prevState) => {
       let temp = [...prevState];
-      console.log(findIndex(e))
+      // const index = e.target.parentNode.parentNode.title;
+      console.log(findIndex(e));
       temp[findIndex(e)].school = e.target.value;
       return temp;
     });
   };
 
+  useEffect(() => {
+    // console.log(education)
+  });
+
   const updateEduFromYear = (e) => {
-    console.log('ayo')
+    console.log("ayo");
     setEducation((prevState) => {
       let temp = [...prevState];
-      console.log(findIndex(e))
+      console.log(findIndex(e));
       temp[findIndex(e)].fromYear = e.target.value;
       return temp;
     });
