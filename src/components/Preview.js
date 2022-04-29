@@ -4,7 +4,7 @@ const Preview = (prop) => {
   const { firstName, lastName, personalDesc, email, phone } = prop.person;
 
   const eduPreview = (edu) => {
-    console.log(edu)
+    // console.log(edu)
     return (
       <div>
         <p>{edu.school}</p>

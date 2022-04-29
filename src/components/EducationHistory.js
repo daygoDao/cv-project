@@ -1,10 +1,12 @@
 import React from "react";
 
 const EducationHistory = (prop) => {
+  // console.log(prop.edu)
+
   const content = (
     <div className="ed">
       <label htmlFor="schoolName">School name</label>
-      <input type="text" name="schoolName" className="schoolName" />
+      <input type="text" name="schoolName" className="schoolName" onChange={prop.updateEdu} />
 
       <label htmlFor="schoolFrom">From</label>
       <input
@@ -30,11 +32,8 @@ const EducationHistory = (prop) => {
   }
 
   let output = display.map((value, index) => {
-    return <li key={index}>{value}</li>
+    return <li title={index} key={index}>{value}</li>
   })
-
-  // console.log(prop.edu);
-  // console.log(display)
 
   return (
     <div className="education">

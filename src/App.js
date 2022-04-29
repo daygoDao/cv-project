@@ -74,6 +74,17 @@ const App = () => {
     });
   };
 
+  const updateEduName = (e) => {
+    console.log(e.target.parentNode.parentNode.title);
+    setEducation((prevState) => {
+      let temp = [...prevState];
+      let index = e.target.parentNode.parentNode.title
+      temp[index].school = e.target.value;
+      // console.log(prevState)
+      return temp;
+    });
+  };
+
   // useEffect(() => {
   //   setEducation((prevState) => {
   //     console.log(prevState);
@@ -93,7 +104,7 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          <EducationHistory edu={education} />
+          <EducationHistory edu={education} updateEdu={updateEduName} />
           <button onClick={appendEduList} type="button">
             add another education
           </button>
