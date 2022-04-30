@@ -1,9 +1,13 @@
 import React from "react";
 
+/**
+ * this will contain the form for the user to input their data
+ * @param {*} prop 
+ * @returns 
+ */
 const EducationHistory = (prop) => {
-  // console.log(prop.edu)
 
-  const content = (
+  const schoolContent = (
     <div className="ed">
       <label htmlFor="schoolName">School name</label>
       <input
@@ -33,12 +37,12 @@ const EducationHistory = (prop) => {
     </div>
   );
 
-  let display = [];
+  let schoolsJSX = [];
   for (let i = 0; i < prop.edu.length; i++) {
-    display.push(content);
+    schoolsJSX.push(schoolContent);
   }
 
-  let output = display.map((value, index) => {
+  let display = schoolsJSX.map((value, index) => {
     return (
       <li data={index} key={index}>
         {value}
@@ -49,7 +53,7 @@ const EducationHistory = (prop) => {
   return (
     <div className="education">
       <h2>Education History</h2>
-      {output}
+      {display}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PersonalInfo from "./components/PersonalInfo";
-import EducationHistory from "./components/EducationHistory";
+// import EducationHistory from "./components/EducationHistory";
+import EducationCore from "./components/EducationCore";
 import WorkHistory from "./components/WorkHistory";
 import Preview from "./components/Preview";
 
@@ -74,54 +75,6 @@ const App = () => {
     },
   ]);
 
-  const appendEduList = () => {
-    setEducation((prevState) => {
-      return [...prevState, baseEduObj];
-    });
-  };
-
-  const findIndex = (e) => {
-    const activeLI = document.querySelectorAll(".education li");
-    let index = 0;
-    for (let i = 0; i < activeLI.length; i++) {
-      if (activeLI[i] == e.target.parentNode.parentNode) return i;
-    }
-  };
-
-  const updateEduName = (e) => {
-    console.log(e.target.parentNode.parentNode.title);
-
-    setEducation((prevState) => {
-      let temp = [...prevState];
-      // const index = e.target.parentNode.parentNode.title;
-      console.log(findIndex(e));
-      temp[findIndex(e)].school = e.target.value;
-      return temp;
-    });
-  };
-
-  useEffect(() => {
-    // console.log(education)
-  });
-
-  const updateEduFromYear = (e) => {
-    console.log("ayo");
-    setEducation((prevState) => {
-      let temp = [...prevState];
-      console.log(findIndex(e));
-      temp[findIndex(e)].fromYear = e.target.value;
-      return temp;
-    });
-  };
-
-  const updateEduToYear = (e) => {
-    setEducation((prevState) => {
-      let temp = [...prevState];
-      temp[findIndex(e)].toYear = e.target.value;
-      return temp;
-    });
-  };
-
   return (
     <div className="App">
       <h1>CV Generator</h1>
@@ -135,7 +88,7 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          <EducationHistory
+          {/* <EducationHistory
             edu={education}
             updateEdu={updateEduName}
             updateEduFromYear={updateEduFromYear}
@@ -143,8 +96,8 @@ const App = () => {
           />
           <button onClick={appendEduList} type="button">
             add another education
-          </button>
-
+          </button> */}
+          <EducationCore education={education} setEducation={setEducation} />
           <WorkHistory />
         </form>
 
