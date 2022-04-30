@@ -73,6 +73,7 @@ const App = () => {
   const [work, setWork] = useState([
     {
       workplace: '',
+      workTitle: '',
       fromYear: 0,
       toYear: 0,
     }

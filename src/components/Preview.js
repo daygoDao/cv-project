@@ -31,6 +31,7 @@ const Preview = (prop) => {
     return (
       <div>
         <span>{work.workplace}</span>
+        <span>Position Title:{work.workTitle}</span>
         <span>From: {work.fromYear}</span>
         <span>To: {work.toYear}</span>
       </div>

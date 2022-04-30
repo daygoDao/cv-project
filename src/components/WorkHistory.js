@@ -3,6 +3,7 @@ import React from "react";
 const WorkHistory = (prop) => {
   const baseWorkObj = {
     workplace: "",
+    workTitle: "",
     fromYear: 0,
     toYear: 0,
   };
@@ -16,12 +17,17 @@ const WorkHistory = (prop) => {
   };
 
   const updateWorkName = (e) => {
-    // console.log("yo");
     prop.setWork((prevState) => {
       let temp = [...prevState];
-      // const index = e.target.parentNode.parentNode.title;
-      console.log(temp[findIndex(e)]);
       temp[findIndex(e)].workplace = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateWorkTitle = (e) => {
+    prop.setWork((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].workTitle = e.target.value;
       return temp;
     });
   };
@@ -67,6 +73,7 @@ const WorkHistory = (prop) => {
         name="workPosition"
         id="workPosition"
         placeholder="FullTime Jabroni"
+        onChange={updateWorkTitle}
       />
 
       <label htmlFor="workFrom">From</label>
