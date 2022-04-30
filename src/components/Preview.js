@@ -39,7 +39,7 @@ const Preview = (prop) => {
 
   let workList = [];
   for (let work of prop.work) {
-    workList.push(eduPreview(work));
+    workList.push(workPreview(work));
   }
 
   let workOutput = workList.map((value, index) => {
