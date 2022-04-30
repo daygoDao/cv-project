@@ -1,0 +1,2 @@
+.education,.personal,.work{display:flex;flex-direction:column}form{width:50%}.cvPreview{border:5px solid red;width:50%}.cvEdu li div,.cvPersonalDesc,.cvWork li div{border:1px solid red;display:flex;flex-direction:column}.App{flex-direction:column}.App,main{display:flex}main{flex-direction:row}
+/*# sourceMappingURL=main.72aaeb29.css.map*/
