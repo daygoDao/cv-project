@@ -21,7 +21,28 @@ const Preview = (prop) => {
     eduList.push(eduPreview(edu));
   }
 
-  let output = eduList.map((value, index) => {
+  let eduOutput = eduList.map((value, index) => {
+    return <li key={index}>{value}</li>;
+  });
+
+  // work preview section
+  const workPreview = (work) => {
+    // console.log(edu)
+    return (
+      <div>
+        <span>{work.workplace}</span>
+        <span>From: {work.fromYear}</span>
+        <span>To: {work.toYear}</span>
+      </div>
+    );
+  };
+
+  let workList = [];
+  for (let work of prop.work) {
+    workList.push(eduPreview(work));
+  }
+
+  let workOutput = workList.map((value, index) => {
     return <li key={index}>{value}</li>;
   });
 
@@ -38,7 +59,11 @@ const Preview = (prop) => {
       </section>
       <section className="cvEdu">
         <h6>edu</h6>
-        {output}
+        {eduOutput}
+      </section>
+      <section className="cvWork">
+        <h6>work</h6>
+        {workOutput}
       </section>
     </div>
   );

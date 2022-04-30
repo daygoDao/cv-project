@@ -61,12 +61,6 @@ const App = () => {
   };
 
   // education history
-  const baseEduObj = {
-    school: "",
-    fromYear: 0,
-    toYear: 0,
-  };
-
   const [education, setEducation] = useState([
     {
       school: "",
@@ -74,6 +68,15 @@ const App = () => {
       toYear: 0,
     },
   ]);
+
+  // work array state
+  const [work, setWork] = useState([
+    {
+      workplace: '',
+      fromYear: 0,
+      toYear: 0,
+    }
+  ])
 
   return (
     <div className="App">
@@ -88,20 +91,13 @@ const App = () => {
             updateEmail={updateEmail}
             updatePhone={updatePhone}
           />
-          {/* <EducationHistory
-            edu={education}
-            updateEdu={updateEduName}
-            updateEduFromYear={updateEduFromYear}
-            updateEduToYear={updateEduToYear}
-          />
-          <button onClick={appendEduList} type="button">
-            add another education
-          </button> */}
+
           <EducationCore education={education} setEducation={setEducation} />
-          <WorkHistory />
+
+          <WorkHistory work={work} setWork={setWork} />
         </form>
 
-        <Preview person={personState} edu={education} />
+        <Preview person={personState} edu={education} work={work} />
       </main>
     </div>
   );
