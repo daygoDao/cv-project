@@ -32,23 +32,22 @@ const WorkHistory = (prop) => {
     });
   };
 
-  // const updateEduFromYear = (e) => {
-  //   console.log("ayo");
-  //   prop.setEducation((prevState) => {
-  //     let temp = [...prevState];
-  //     console.log(findIndex(e));
-  //     temp[findIndex(e)].fromYear = e.target.value;
-  //     return temp;
-  //   });
-  // };
+  const updateWorkFromYear = (e) => {
+    prop.setWork((prevState) => {
+      let temp = [...prevState];
+      console.log(findIndex(e));
+      temp[findIndex(e)].fromYear = e.target.value;
+      return temp;
+    });
+  };
 
-  // const updateEduToYear = (e) => {
-  //   prop.setEducation((prevState) => {
-  //     let temp = [...prevState];
-  //     temp[findIndex(e)].toYear = e.target.value;
-  //     return temp;
-  //   });
-  // };
+  const updateWorkToYear = (e) => {
+    prop.setWork((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].toYear = e.target.value;
+      return temp;
+    });
+  };
 
   const appendWorkList = () => {
     prop.setWork((prevState) => {
@@ -77,10 +76,22 @@ const WorkHistory = (prop) => {
       />
 
       <label htmlFor="workFrom">From</label>
-      <input type="number" name="workFrom" id="workFrom" placeholder="1984" />
+      <input
+        type="number"
+        name="workFrom"
+        id="workFrom"
+        placeholder="1984"
+        onChange={updateWorkFromYear}
+      />
 
       <label htmlFor="workTo">To</label>
-      <input type="number" name="workTo" id="workTo" placeholder="2022" />
+      <input
+        type="number"
+        name="workTo"
+        id="workTo"
+        placeholder="2022"
+        onChange={updateWorkToYear}
+      />
     </div>
   );
 
