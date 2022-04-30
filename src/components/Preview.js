@@ -50,7 +50,6 @@ const Preview = (prop) => {
   return (
     <div className="cvPreview">
       <section className="cvPersonalDesc">
-        <h4>teset</h4>
         <h5>
           {firstName} {lastName}
         </h5>
