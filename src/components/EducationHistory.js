@@ -44,7 +44,7 @@ const EducationHistory = (prop) => {
 
   let display = schoolsJSX.map((value, index) => {
     return (
-      <li data={index} key={index}>
+      <li key={index}>
         {value}
       </li>
     );

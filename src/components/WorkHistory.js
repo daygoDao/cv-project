@@ -16,11 +16,11 @@ const WorkHistory = (prop) => {
   };
 
   const updateWorkName = (e) => {
-    console.log('yo');
+    // console.log("yo");
     prop.setWork((prevState) => {
       let temp = [...prevState];
       // const index = e.target.parentNode.parentNode.title;
-      console.log(findIndex(e));
+      console.log(temp[findIndex(e)]);
       temp[findIndex(e)].workplace = e.target.value;
       return temp;
     });
@@ -44,10 +44,9 @@ const WorkHistory = (prop) => {
   //   });
   // };
 
-
   const appendWorkList = () => {
     prop.setWork((prevState) => {
-      console.log(baseWorkObj)
+      console.log(baseWorkObj);
       return [...prevState, baseWorkObj];
     });
   };
@@ -55,7 +54,12 @@ const WorkHistory = (prop) => {
   const workContent = (
     <div>
       <label htmlFor="workName">Workplace name</label>
-      <input type="text" name="workName" id="workName" />
+      <input
+        type="text"
+        name="workName"
+        id="workName"
+        onChange={updateWorkName}
+      />
 
       <label htmlFor="workPosition">Job Title</label>
       <input
@@ -63,7 +67,6 @@ const WorkHistory = (prop) => {
         name="workPosition"
         id="workPosition"
         placeholder="FullTime Jabroni"
-        onChange={updateWorkName}
       />
 
       <label htmlFor="workFrom">From</label>

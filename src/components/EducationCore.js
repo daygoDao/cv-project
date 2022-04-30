@@ -31,12 +31,10 @@ const EducationCore = (prop) => {
   };
 
   const updateEduName = (e) => {
-    console.log(e.target.parentNode.parentNode.title);
-
     prop.setEducation((prevState) => {
       let temp = [...prevState];
       // const index = e.target.parentNode.parentNode.title;
-      console.log(findIndex(e));
+    //   console.log(findIndex(e));
       temp[findIndex(e)].school = e.target.value;
       return temp;
     });
