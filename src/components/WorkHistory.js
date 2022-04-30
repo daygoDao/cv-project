@@ -4,6 +4,7 @@ const WorkHistory = (prop) => {
   const baseWorkObj = {
     workplace: "",
     workTitle: "",
+    workDesc: "",
     fromYear: 0,
     toYear: 0,
   };
@@ -28,6 +29,14 @@ const WorkHistory = (prop) => {
     prop.setWork((prevState) => {
       let temp = [...prevState];
       temp[findIndex(e)].workTitle = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateWorkDesc = (e) => {
+    prop.setWork((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].workDesc = e.target.value;
       return temp;
     });
   };
@@ -73,6 +82,15 @@ const WorkHistory = (prop) => {
         id="workPosition"
         placeholder="FullTime Jabroni"
         onChange={updateWorkTitle}
+      />
+
+      <label htmlFor="workPosition">Job Description</label>
+      <input
+        type="text"
+        name="workDesc"
+        id="workDesc"
+        placeholder="goofing 24/7"
+        onChange={updateWorkDesc}
       />
 
       <label htmlFor="workFrom">From</label>

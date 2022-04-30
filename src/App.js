@@ -72,12 +72,13 @@ const App = () => {
   // work array state
   const [work, setWork] = useState([
     {
-      workplace: '',
-      workTitle: '',
+      workplace: "",
+      workTitle: "",
+      workDesc: "",
       fromYear: 0,
       toYear: 0,
-    }
-  ])
+    },
+  ]);
 
   return (
     <div className="App">
