@@ -1,5 +1,3 @@
-import React from "react";
-
 const Preview = (prop) => {
   const { firstName, lastName, personalDesc, email, phone } = prop.person;
 
@@ -26,7 +24,6 @@ const Preview = (prop) => {
 
   // work preview section
   const workPreview = (work) => {
-    // console.log(edu)
     return (
       <div>
         <span>{work.workplace}</span>

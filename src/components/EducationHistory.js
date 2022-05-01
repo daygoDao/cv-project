@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * this will contain the form for the user to input their data
  * @param {*} prop
@@ -98,7 +96,6 @@ const EducationHistory = (prop) => {
     </div>
   );
 
-  console.log(prop);
   let schoolsJSX = [];
   for (let i = 0; i < prop.education.length; i++) {
     schoolsJSX.push(schoolContent);
