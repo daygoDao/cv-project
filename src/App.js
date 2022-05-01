@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PersonalInfo from "./components/PersonalInfo";
-// import EducationHistory from "./components/EducationHistory";
-import EducationCore from "./components/EducationCore";
+import EducationHistory from "./components/EducationHistory";
+// import EducationCore from "./components/EducationCore";
 import WorkHistory from "./components/WorkHistory";
 import Preview from "./components/Preview";
 
@@ -94,7 +94,7 @@ const App = () => {
             updatePhone={updatePhone}
           />
 
-          <EducationCore education={education} setEducation={setEducation} />
+          <EducationHistory education={education} setEducation={setEducation} />
 
           <WorkHistory work={work} setWork={setWork} />
         </form>

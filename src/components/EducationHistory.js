@@ -2,10 +2,58 @@ import React from "react";
 
 /**
  * this will contain the form for the user to input their data
- * @param {*} prop 
- * @returns 
+ * @param {*} prop
+ * @returns
  */
 const EducationHistory = (prop) => {
+  // education history
+  const baseEduObj = {
+    school: "",
+    fromYear: 0,
+    toYear: 0,
+  };
+
+  const appendEduList = () => {
+    prop.setEducation((prevState) => {
+      return [...prevState, baseEduObj];
+    });
+  };
+
+  const findIndex = (e) => {
+    const activeLI = document.querySelectorAll(".education li");
+    let index = 0;
+    for (let i = 0; i < activeLI.length; i++) {
+      if (activeLI[i] == e.target.parentNode.parentNode) return i;
+    }
+  };
+
+  const updateEduName = (e) => {
+    prop.setEducation((prevState) => {
+      let temp = [...prevState];
+      // const index = e.target.parentNode.parentNode.title;
+      //   console.log(findIndex(e));
+      temp[findIndex(e)].school = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateEduFromYear = (e) => {
+    console.log("ayo");
+    prop.setEducation((prevState) => {
+      let temp = [...prevState];
+      console.log(findIndex(e));
+      temp[findIndex(e)].fromYear = e.target.value;
+      return temp;
+    });
+  };
+
+  const updateEduToYear = (e) => {
+    prop.setEducation((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].toYear = e.target.value;
+      return temp;
+    });
+  };
 
   const schoolContent = (
     <div className="ed">
@@ -14,7 +62,7 @@ const EducationHistory = (prop) => {
         type="text"
         name="schoolName"
         className="schoolName"
-        onChange={prop.updateEdu}
+        onChange={updateEduName}
       />
 
       <label htmlFor="schoolFrom">From</label>
@@ -23,7 +71,7 @@ const EducationHistory = (prop) => {
         name="schoolFrom"
         className="schoolFrom"
         placeholder="1984"
-        onChange={prop.updateEduFromYear}
+        onChange={updateEduFromYear}
       />
 
       <label htmlFor="schoolTo">To</label>
@@ -32,28 +80,29 @@ const EducationHistory = (prop) => {
         name="schoolTo"
         className="schoolTo"
         placeholder="2022"
-        onChange={prop.updateEduToYear}
+        onChange={updateEduToYear}
       />
     </div>
   );
 
+  console.log(prop)
   let schoolsJSX = [];
-  for (let i = 0; i < prop.edu.length; i++) {
+  for (let i = 0; i < prop.education.length; i++) {
     schoolsJSX.push(schoolContent);
   }
 
   let display = schoolsJSX.map((value, index) => {
-    return (
-      <li key={index}>
-        {value}
-      </li>
-    );
+    return <li key={index}>{value}</li>;
   });
 
   return (
     <div className="education">
       <h2>Education History</h2>
       {display}
+
+      <button onClick={appendEduList} type="button">
+        add another education
+      </button>
     </div>
   );
 };

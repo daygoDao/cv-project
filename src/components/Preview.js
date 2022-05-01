@@ -1,8 +1,6 @@
 import React from "react";
-import EducationCore from "./EducationCore";
 
 const Preview = (prop) => {
-  // console.log(EducationCore.education)
   const { firstName, lastName, personalDesc, email, phone } = prop.person;
 
   const eduPreview = (edu) => {
