@@ -1,8 +1,8 @@
-const PersonalInfo = (prop) => {
-  const { firstName, lastName, personalDesc, email, phone } = prop.person;
+const PersonalInfo = ({person,setPersonState}) => {
+  const { firstName, lastName, personalDesc, email, phone } = person;
 
   const updateFirstName = (e) => {
-    prop.setPersonState((prevState) => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         firstName: e.target.value,
@@ -11,7 +11,7 @@ const PersonalInfo = (prop) => {
   };
 
   const updateLastName = (e) => {
-    prop.setPersonState((prevState) => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         lastName: e.target.value,
@@ -20,7 +20,7 @@ const PersonalInfo = (prop) => {
   };
 
   const updatePersonDesc = (e) => {
-    prop.setPersonState((prevState) => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         personalDesc: e.target.value,
@@ -29,7 +29,7 @@ const PersonalInfo = (prop) => {
   };
 
   const updateEmail = (e) => {
-    prop.setPersonState((prevState) => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         email: e.target.value,
@@ -38,7 +38,7 @@ const PersonalInfo = (prop) => {
   };
 
   const updatePhone = (e) => {
-    prop.setPersonState((prevState) => {
+    setPersonState((prevState) => {
       return {
         ...prevState,
         phone: e.target.value,

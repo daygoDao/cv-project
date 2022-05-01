@@ -14,51 +14,6 @@ const App = () => {
     phone: "1-800-whaddup",
   });
 
-  // const updateFirstName = (e) => {
-  //   setPersonState((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       firstName: e.target.value,
-  //     };
-  //   });
-  // };
-
-  // const updateLastName = (e) => {
-  //   setPersonState((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       lastName: e.target.value,
-  //     };
-  //   });
-  // };
-
-  // const updatePersonDesc = (e) => {
-  //   setPersonState((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       personalDesc: e.target.value,
-  //     };
-  //   });
-  // };
-
-  // const updateEmail = (e) => {
-  //   setPersonState((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       email: e.target.value,
-  //     };
-  //   });
-  // };
-
-  // const updatePhone = (e) => {
-  //   setPersonState((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       phone: e.target.value,
-  //     };
-  //   });
-  // };
-
   // education history
   const [education, setEducation] = useState([
     {
@@ -85,10 +40,7 @@ const App = () => {
       <h1>CV Generator</h1>
       <main>
         <form>
-          <PersonalInfo
-            person={personState} 
-            setPersonState={setPersonState}
-          />
+          <PersonalInfo person={personState} setPersonState={setPersonState} />
 
           <EducationHistory education={education} setEducation={setEducation} />
 
