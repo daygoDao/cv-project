@@ -9,6 +9,7 @@ const EducationHistory = (prop) => {
   // education history
   const baseEduObj = {
     school: "",
+    major: "",
     fromYear: 0,
     toYear: 0,
   };
@@ -21,7 +22,6 @@ const EducationHistory = (prop) => {
 
   const findIndex = (e) => {
     const activeLI = document.querySelectorAll(".education li");
-    let index = 0;
     for (let i = 0; i < activeLI.length; i++) {
       if (activeLI[i] == e.target.parentNode.parentNode) return i;
     }
@@ -30,15 +30,20 @@ const EducationHistory = (prop) => {
   const updateEduName = (e) => {
     prop.setEducation((prevState) => {
       let temp = [...prevState];
-      // const index = e.target.parentNode.parentNode.title;
-      //   console.log(findIndex(e));
       temp[findIndex(e)].school = e.target.value;
       return temp;
     });
   };
 
+  const updateEduMajor = (e) => {
+    prop.setEducation((prevState) => {
+      let temp = [...prevState];
+      temp[findIndex(e)].major = e.target.value;
+      return temp;
+    });
+  };
+
   const updateEduFromYear = (e) => {
-    console.log("ayo");
     prop.setEducation((prevState) => {
       let temp = [...prevState];
       console.log(findIndex(e));
@@ -65,6 +70,14 @@ const EducationHistory = (prop) => {
         onChange={updateEduName}
       />
 
+      <label htmlFor="schoolMajor">Major</label>
+      <input
+        type="text"
+        name="schoolMajor"
+        className="schooMajor"
+        onChange={updateEduMajor}
+      />
+
       <label htmlFor="schoolFrom">From</label>
       <input
         type="number"
@@ -85,7 +98,7 @@ const EducationHistory = (prop) => {
     </div>
   );
 
-  console.log(prop)
+  console.log(prop);
   let schoolsJSX = [];
   for (let i = 0; i < prop.education.length; i++) {
     schoolsJSX.push(schoolContent);

@@ -11,7 +11,6 @@ const WorkHistory = (prop) => {
 
   const findIndex = (e) => {
     const activeLI = document.querySelectorAll(".work li");
-    let index = 0;
     for (let i = 0; i < activeLI.length; i++) {
       if (activeLI[i] == e.target.parentNode.parentNode) return i;
     }
@@ -44,7 +43,6 @@ const WorkHistory = (prop) => {
   const updateWorkFromYear = (e) => {
     prop.setWork((prevState) => {
       let temp = [...prevState];
-      console.log(findIndex(e));
       temp[findIndex(e)].fromYear = e.target.value;
       return temp;
     });
@@ -60,7 +58,6 @@ const WorkHistory = (prop) => {
 
   const appendWorkList = () => {
     prop.setWork((prevState) => {
-      console.log(baseWorkObj);
       return [...prevState, baseWorkObj];
     });
   };

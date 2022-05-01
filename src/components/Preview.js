@@ -3,11 +3,12 @@ import React from "react";
 const Preview = (prop) => {
   const { firstName, lastName, personalDesc, email, phone } = prop.person;
 
+  // edu preview section
   const eduPreview = (edu) => {
-    // console.log(edu)
     return (
       <div>
-        <span>{edu.school}</span>
+        <span>School: {edu.school}</span>
+        <span>Major: {edu.major}</span>
         <span>From: {edu.fromYear}</span>
         <span>To: {edu.toYear}</span>
       </div>

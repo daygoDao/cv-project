@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PersonalInfo from "./components/PersonalInfo";
 import EducationHistory from "./components/EducationHistory";
-// import EducationCore from "./components/EducationCore";
 import WorkHistory from "./components/WorkHistory";
 import Preview from "./components/Preview";
 
@@ -64,6 +63,7 @@ const App = () => {
   const [education, setEducation] = useState([
     {
       school: "",
+      major: "",
       fromYear: 0,
       toYear: 0,
     },
