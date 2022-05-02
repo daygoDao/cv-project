@@ -18,6 +18,13 @@ const EducationHistory = (prop) => {
     });
   };
 
+  const deleteEducation = (e) => {
+    prop.setEducation((prevState) => {
+      console.log(prevState.filter((_, i) => i !== findIndex(e)));
+      return prevState.filter((_, i) => i !== findIndex(e));
+    });
+  };
+
   const findIndex = (e) => {
     const activeLI = document.querySelectorAll(".education li");
     for (let i = 0; i < activeLI.length; i++) {
@@ -93,6 +100,10 @@ const EducationHistory = (prop) => {
         placeholder="2022"
         onChange={updateEduToYear}
       />
+
+      <button type="button" onClick={deleteEducation}>
+        delete
+      </button>
     </div>
   );
 
